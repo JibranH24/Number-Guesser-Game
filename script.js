@@ -6,70 +6,118 @@
 
 
 
-// let inputBox=document.getElementById("inputBox")
+let inputBox=document.getElementById("inputBox")
 
-// let saveButton=document.getElementById("save")
-// saveButton.addEventListener("click",tellsIfHigherOrLowerWithTriesLeft)
+let saveButton=document.getElementById("save")
+saveButton.addEventListener("click",tellsIfHigherOrLowerWithTriesLeft)
 
-// let paragraph= document.getElementById("higherOrLowerParagraph")
+let paragraph= document.getElementById("higherOrLowerParagraph")
 
 
 const computerNumber = Math.floor(Math.random() * 10)+1
-const maxTries=3
 let tries=0
+console.log(computerNumber)
 
-// function tellsIfHigherOrLowerWithTriesLeft(){
-//     while(tries<maxTries){
-//         tries+=1
-//         //let guess=parseInt(prompt("Pick an number between 1 and 10")) //make sure you get a real number (not the text "6")
-        
-//         let guess=parseInt(document.getElementById("inputBox").value)
+function tellsIfHigherOrLowerWithTriesLeft(){
+    tries+=1
+    
+    let guess=parseInt(document.getElementById("inputBox").value)
 
-//         let triesLeft=maxTries-tries //how many tries u have left
+    let direction="Higher"
+    
+    if (guess>computerNumber && tries!==3 ){//&& guess!==computerNumber){
+        direction="Lower"
+        paragraph.innerHTML=`${direction} and you've had ${tries} go(es)`
+    }
+    else if(guess<computerNumber && tries!==3){
+        paragraph.innerHTML=`${direction} and you've had ${tries} go(es)`
+    }
+    else if(guess==computerNumber){
+        paragraph.innerHTML=`Correct! You got it right in ${tries} go(es)`
+        paragraph.style.color="green"
+        setTimeout(resetGame,2000)
+    }
+    else if(tries==3){
+        paragraph.innerHTML="Better luck next time!"
+        paragraph.style.color="red"
+        setTimeout(resetGame,2000)
+    }
+    
+}
 
-//         let direction="higher"
+function resetGame(){
+    document.location.reload()
+}
+    
 
-//         if (guess>computerNumber){
-//             direction="lower"
-//             paragraph.innerHTML=`${direction} and you have ${triesLeft} tries left`
-//         }
-        
-//         else if (guess==computerNumber){
-//             paragraph.innerHTML="You Win!"
-//            // document.location.reload()//set interval
-//             break
-//         }
-//         else if(triesLeft==0){
-//             paragraph.innerHTML="Better luck next time!"
-//             break
-//         }
-//        //alert(direction+ " and you have " +triesLeft+" tries left")
 
-//        paragraph.innerHTML=`${direction} and you have ${triesLeft} tries left`
-//     }
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+// tries+=1
+// //let guess=parseInt(prompt("Pick an number between 1 and 10")) //make sure you get a real number (not the text "6")
+
+// let guess=parseInt(document.getElementById("inputBox").value)
+// // console.log(guess)
+//     //how many tries u have left
+
+// let direction="higher"
+
+// if (guess>computerNumber){
+//     direction="lower"
+//     //paragraph.innerHTML=`${direction} and you have ${triesLeft} tries left`
 // }
 
-while(tries<maxTries){
-    tries+=1
-    let guess=parseInt(prompt("your guess")) //make sure you get a real number (not the text "6")
-    let triesLeft=maxTries-tries //how many tries u have left
-    let direction="higher"
-    if (guess>computerNumber && triesLeft!==0){
-        direction="lower"
-    }
+// else if (guess==computerNumber){
+//     paragraph.innerHTML="You Win!"
+//     // document.location.reload()//set interval
+//     //break
+// }
+// else if(tries==3){
+//     paragraph.innerHTML="Better luck next time!"
+//     //break
+// }
+// //alert(direction+ " and you have " +triesLeft+" tries left")
 
-    else if (guess==computerNumber){
-        alert("you win")
-        break
-    }
-    else if(triesLeft==0){
-        alert("Out of tries")
-        break
-    }
-    alert(direction+ " and you have " +triesLeft+" tries left")
+// paragraph.innerHTML=`${direction} and you've had ${tries} go(es)`
+// //if (triesLeft==0)
 
 
-}
+//}
+
+
+// while(tries<maxTries){
+//     tries+=1
+//     let guess=parseInt(prompt("your guess")) //make sure you get a real number (not the text "6")
+//     let triesLeft=maxTries-tries //how many tries u have left
+//     let direction="higher"
+//     if (guess>computerNumber && triesLeft!==0){
+//         direction="lower"
+//     }
+
+//     else if (guess==computerNumber){
+//         alert("you win")
+//         break
+//     }
+//     else if(triesLeft==0){
+//         alert("Out of tries")
+//         break
+//     }
+//     alert(direction+ " and you have " +triesLeft+" tries left")
+
+
+// }
 
 
 
