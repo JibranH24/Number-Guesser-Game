@@ -34,7 +34,7 @@ function tellsIfHigherOrLowerWithTriesLeft(){
     }
     else if(guess==computerNumber){
         paragraph.innerHTML=`Correct! You got it right in ${tries} go(es)`
-        paragraph.style.color="green"
+        paragraph.style.color="greenyellow"
         setTimeout(resetGame,2000)
     }
     else if(tries==3){
