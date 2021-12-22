@@ -27,7 +27,7 @@ header{
 h1{
     color: royalblue;
     font-size: 20vh;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /*adds border on font*/
     
 
 }
@@ -37,7 +37,7 @@ h2{
    
 }
 #belowTheH2{
-    font-size: 4vh;
+    font-size:4vh;
     
 }
 #higherOrLowerParagraph{

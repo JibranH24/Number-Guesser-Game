@@ -16,7 +16,7 @@ let paragraph= document.getElementById("higherOrLowerParagraph")
 
 const computerNumber = Math.floor(Math.random() * 10)+1
 let tries=0
-console.log(computerNumber)
+
 
 function tellsIfHigherOrLowerWithTriesLeft(){
     tries+=1
@@ -25,7 +25,7 @@ function tellsIfHigherOrLowerWithTriesLeft(){
 
     let direction="Higher"
     
-    if (guess>computerNumber && tries!==3 ){//&& guess!==computerNumber){
+    if (guess>computerNumber && tries!==3 ){
         direction="Lower"
         paragraph.innerHTML=`${direction} and you've had ${tries} go(es)`
     }
